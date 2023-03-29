@@ -1,0 +1,118 @@
+{
+    "inputUnits": [
+        14
+    ],
+    "outputUnits": 4,
+    "inputs": {
+        "0": {
+            "dtype": "number",
+            "min": 93.52,
+            "max": 180
+        },
+        "1": {
+            "dtype": "number",
+            "min": 44.76,
+            "max": 179.9
+        },
+        "2": {
+            "dtype": "number",
+            "min": 101.83,
+            "max": 180
+        },
+        "3": {
+            "dtype": "number",
+            "min": 85.33,
+            "max": 179.9
+        },
+        "4": {
+            "dtype": "number",
+            "min": 12.53,
+            "max": 121.08
+        },
+        "5": {
+            "dtype": "number",
+            "min": 16.09,
+            "max": 120.61
+        },
+        "6": {
+            "dtype": "number",
+            "min": 43.37,
+            "max": 180
+        },
+        "7": {
+            "dtype": "number",
+            "min": 39.67,
+            "max": 180
+        },
+        "8": {
+            "dtype": "number",
+            "min": 7.56,
+            "max": 133.92
+        },
+        "9": {
+            "dtype": "number",
+            "min": 11.04,
+            "max": 129.73
+        },
+        "10": {
+            "dtype": "number",
+            "min": 10.09,
+            "max": 123.64
+        },
+        "11": {
+            "dtype": "number",
+            "min": 12.73,
+            "max": 118.38
+        },
+        "12": {
+            "dtype": "number",
+            "min": 13.63,
+            "max": 149.71
+        },
+        "13": {
+            "dtype": "number",
+            "min": 14.72,
+            "max": 150.75
+        }
+    },
+    "outputs": {
+        "0": {
+            "dtype": "string",
+            "min": 0,
+            "max": 1,
+            "uniqueValues": [
+                "Mountain",
+                "Tree",
+                "Goddess",
+                "Warrior 2"
+            ],
+            "legend": {
+                "Mountain": [
+                    1,
+                    0,
+                    0,
+                    0
+                ],
+                "Tree": [
+                    0,
+                    1,
+                    0,
+                    0
+                ],
+                "Goddess": [
+                    0,
+                    0,
+                    1,
+                    0
+                ],
+                "Warrior 2": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            }
+        }
+    },
+    "isNormalized": true
+}
