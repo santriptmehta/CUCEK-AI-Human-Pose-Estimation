@@ -22,3 +22,8 @@ $(".warrior2-img").on('click', function(){
     yogaPose = $("#Warrior-2").attr("id");
     localStorage.setItem('SelectedPose', yogaPose);
 });
+
+$(".triangle-img").on('click', function(){
+    yogaPose = $("#Triangle").attr("id");
+    localStorage.setItem('SelectedPose', yogaPose);
+});

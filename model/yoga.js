@@ -3,7 +3,7 @@ let video;
 let poseNet;
 let pose;
 let skeleton;
-let numOutputs = 4;
+let numOutputs = 5;
 
 let brain;
 
@@ -13,6 +13,7 @@ let mountainAngleTarget = [175,175,175,175,19,22,179,170,19,20,15,15,20,20];
 let treeAngleTarget = [175,58,175,114,30,30,45,45,23,23,25,45,25,20];
 let goddessAngleTarget = [110,110,110,110,100,100,100,100,120,120,110,110,140,140];
 let warrior2AngleTarget = [160,100,160,100,95,100,175,175,70,80,80,75,90,90];
+let triangleAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
 
 let targetArray;
 let label = "";
@@ -89,8 +90,10 @@ function setTargetArray() {
     targetArray = treeAngleTarget;
   } else if (currentPose === 'Goddess') {
     targetArray = goddessAngleTarget;
-  } else {
+  } else if(currentPose === 'Warrior 2') {
     targetArray = warrior2AngleTarget;
+  } else if(currentPose === 'Triangle') {
+    targetArray = triangleAngleTarget;
   }
 }
 
@@ -101,7 +104,7 @@ function loadUserTrainer() {
   if (pose_name === "warrior 2") {
     pose_name = 'warrior2';
   }
-  if (pose_name === "goddess") {
+  if (pose_name === "goddess" ||  pose_name==="triangle") {
     img_format = ".png";
   }
   else {

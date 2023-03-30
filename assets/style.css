@@ -84,11 +84,15 @@ td {
 }
 
 .column-poses {
-  flex: 25%;
+  /* flex: 25%; */
   padding: 10px;
   background-size: cover;
 }
 
+#triangle{
+  height: 340px;
+  width: 400px;
+}
 .pose-description {
   text-align: center;
   font-size: 1.5rem;
