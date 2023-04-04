@@ -3,7 +3,7 @@ let video;
 let poseNet;
 let pose;
 let skeleton;
-let numOutputs = 5;
+let numOutputs = 8;
 
 let brain;
 
@@ -14,6 +14,9 @@ let treeAngleTarget = [175,58,175,114,30,30,45,45,23,23,25,45,25,20];
 let goddessAngleTarget = [110,110,110,110,100,100,100,100,120,120,110,110,140,140];
 let warrior2AngleTarget = [160,100,160,100,95,100,175,175,70,80,80,75,90,90];
 let triangleAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
+let reverseWarriorAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
+let seatedTwistAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
+let sidePlankAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
 
 let targetArray;
 let label = "";
@@ -84,6 +87,7 @@ function decrease() {
 }
 
 function setTargetArray() {
+  console.log(currentPose);
   if (currentPose === 'Mountain') {
     targetArray = mountainAngleTarget;
   } else if (currentPose === "Tree") {
@@ -94,6 +98,12 @@ function setTargetArray() {
     targetArray = warrior2AngleTarget;
   } else if(currentPose === 'Triangle') {
     targetArray = triangleAngleTarget;
+  } else if(currentPose === 'Reverse-Warrior') {
+    targetArray = reverseWarriorAngleTarget;
+  } else if(currentPose === 'Seated-Twist') {
+    targetArray = seatedTwistAngleTarget;
+  } else if(currentPose === 'Side-Plank') {
+    targetArray = sidePlankAngleTarget;
   }
 }
 
@@ -104,11 +114,11 @@ function loadUserTrainer() {
   if (pose_name === "warrior 2") {
     pose_name = 'warrior2';
   }
-  if (pose_name === "goddess" ||  pose_name==="triangle") {
-    img_format = ".png";
+  if (pose_name === "mountain" ||  pose_name==="tree") {
+    img_format = ".svg";
   }
   else {
-    img_format = ".svg";
+    img_format = ".png";
   }
   img_path = "imgs/" + pose_name + img_format;
   $(".trainer-img").attr("src", img_path);
