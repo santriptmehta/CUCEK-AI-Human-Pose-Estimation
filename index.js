@@ -27,3 +27,15 @@ $(".triangle-img").on('click', function(){
     yogaPose = $("#Triangle").attr("id");
     localStorage.setItem('SelectedPose', yogaPose);
 });
+$(".reverse-warrior-img").on('click', function(){
+    yogaPose = $("#Reverse-Warrior").attr("id");
+    localStorage.setItem('SelectedPose', yogaPose);
+});
+$(".seated-twist-img").on('click', function(){
+    yogaPose = $("#Seated-Twist").attr("id");
+    localStorage.setItem('SelectedPose', yogaPose);
+});
+$(".side-plank-img").on('click', function(){
+    yogaPose = $("#Side-Plank").attr("id");
+    localStorage.setItem('SelectedPose', yogaPose);
+});
