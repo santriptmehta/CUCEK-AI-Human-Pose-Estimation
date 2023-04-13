@@ -79,14 +79,20 @@ td {
 }
 
 .row-poses {
+  /* display: flex;
+  padding-top: 5%; */
   display: flex;
-  padding-top: 5%;
+   flex-wrap: wrap;
+   padding: 0 2px;
 }
 
 .column-poses {
   /* flex: 25%; */
-  padding: 10px;
-  background-size: cover;
+  /* padding: 10px;
+  background-size: cover; */
+  flex: 17%;
+   max-width: 20%;
+   padding: 0 2px;
 }
 
 .pose-description {

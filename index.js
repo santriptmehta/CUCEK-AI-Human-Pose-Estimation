@@ -39,3 +39,11 @@ $(".side-plank-img").on('click', function(){
     yogaPose = $("#Side-Plank").attr("id");
     localStorage.setItem('SelectedPose', yogaPose);
 });
+$(".extended-angle-img").on('click', function(){
+    yogaPose = $("#Extended-Angle").attr("id");
+    localStorage.setItem('SelectedPose', yogaPose);
+});
+$(".low-lunge-revolved-img").on('click', function(){
+    yogaPose = $("#Low-Lunge-Revolved").attr("id");
+    localStorage.setItem('SelectedPose', yogaPose);
+});
