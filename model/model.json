@@ -65,11 +65,7 @@
     {
       "paths": ["./model.weights.bin"],
       "weights": [
-        {
-          "name": "dense_Dense1/kernel",
-          "shape": [14, 16],
-          "dtype": "float32"
-        },
+        { "name": "dense_Dense1/kernel", "shape": [14, 16], "dtype": "float32"},
         { "name": "dense_Dense1/bias", "shape": [16], "dtype": "float32" },
         { "name": "dense_Dense2/kernel", "shape": [16, 4], "dtype": "float32" },
         { "name": "dense_Dense2/bias", "shape": [4], "dtype": "float32" }

@@ -3,11 +3,11 @@ let video;
 let poseNet;
 let pose;
 let skeleton;
-let numOutputs = 8;
+let numOutputs = 10;
 
 let brain;
 
-console.log("This is the yoga.j")
+console.log("This is the yoga.js")
 // may need to tweak with these values if we plan to use this method
 let mountainAngleTarget = [175,175,175,175,19,22,179,170,19,20,15,15,20,20];
 let treeAngleTarget = [175,58,175,114,30,30,45,45,23,23,25,45,25,20];
@@ -17,6 +17,8 @@ let triangleAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
 let reverseWarriorAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
 let seatedTwistAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
 let sidePlankAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
+let standingCoreAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
+let lowLungeRevolvedAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
 
 let targetArray;
 let label = "";
@@ -104,9 +106,12 @@ function setTargetArray() {
     targetArray = seatedTwistAngleTarget;
   } else if(currentPose === 'Side-Plank') {
     targetArray = sidePlankAngleTarget;
+  } else if(currentPose === 'Standing-Core') {
+    targetArray = standingCoreAngleTarget;
+  } else if(currentPose === 'Low-Lunge-Revolved') {
+    targetArray = lowLungeRevolvedAngleTarget;
   }
 }
-
 function loadUserTrainer() {
   // pick model based on user selection
   let pose_name = currentPose.toLowerCase();
