@@ -40,7 +40,7 @@ $(".side-plank-img").on('click', function(){
     localStorage.setItem('SelectedPose', yogaPose);
 });
 $(".extended-angle-img").on('click', function(){
-    yogaPose = $("#Extended-Angle").attr("id");
+    yogaPose = $("#Standing-Core").attr("id");
     localStorage.setItem('SelectedPose', yogaPose);
 });
 $(".low-lunge-revolved-img").on('click', function(){

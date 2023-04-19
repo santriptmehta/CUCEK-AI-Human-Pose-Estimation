@@ -84,11 +84,23 @@
                 "Mountain",
                 "Tree",
                 "Goddess",
-                "Warrior 2"
+                "Warrior 2",
+                "Triangle",
+                "Reverse Warrior",
+                "Seated Twist",
+                "Side Plank",
+                "Standing Core",
+                "Low Lounge Revolve"
             ],
             "legend": {
                 "Mountain": [
                     1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
                     0,
                     0,
                     0
@@ -97,20 +109,111 @@
                     0,
                     1,
                     0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
                     0
                 ],
                 "Goddess": [
                     0,
                     0,
                     1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
                     0
                 ],
                 "Warrior 2": [
                     0,
                     0,
                     0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "Triangle": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "Reverse Warrior": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "Seated Twist": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0
+                ],
+                "Side Plank": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0
+                ],
+                "Standing Core": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0
+                ],
+                "Low Lounge Revolve": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
                     1
                 ]
+
             }
         }
     },
