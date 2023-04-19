@@ -9,12 +9,10 @@ html {
 
 body {
   margin: 0;
-  /*background-color: #ce3635;*/
   text-align: center;
   background-color: #FFFFFF;
   font-family: Helvetica, sans-serif, sans-serif;
   font-size: 14px;
-  overflow: hidden;
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -60,39 +58,43 @@ td {
 
 .yoga-title {
   display: block;
-  width: 30%;
+  width: 100%;
+  max-width: 600px;
   margin: auto;
 }
 
 .button {
-  display: inline-block;
+  display: block;
   font-size: 2rem;
   line-height: 65px;
-  text-align: left;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  text-align: center;
+  margin: 0 auto 20px;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 30px;
+  background-color: #ce3635;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-.button-container {
-  /* text-align: center; */
-  align-self: flex-start;
+.button:hover {
+  background-color: #b03231;
 }
 
 .row-poses {
-  /* display: flex;
-  padding-top: 5%; */
   display: flex;
-   flex-wrap: wrap;
-   padding: 0 2px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 .column-poses {
-  /* flex: 25%; */
-  /* padding: 10px;
-  background-size: cover; */
-  flex: 17%;
-   max-width: 20%;
-   padding: 0 2px;
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  background-size: cover;
 }
 
 .pose-description {
@@ -118,7 +120,8 @@ td {
 }
 
 .feedback {
-  /* margin: auto; */
+  margin: auto;
+  max-width: 500px;
 }
 
 .homepage-btn {
@@ -139,4 +142,32 @@ td {
   margin: auto;
   text-align: center;
   font-size: 5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  /* styles for tablets and larger screens */
+  .button {
+    width: 50%;
+  }
+
+  .yoga-title {
+    width: 50%;
+  }
+
+  .row-poses {
+    padding: 40px;
+  }
+
+  .column-poses {
+    max-width: none;
+  }
+
+  .feedback {
+    max-width: 800px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  /* styles for desktop screens */
+  
 }
