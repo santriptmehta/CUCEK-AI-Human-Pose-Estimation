@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Slabo+13px&display=swap');
 canvas {
   display: block;
   text-align: center;
@@ -11,7 +12,7 @@ body {
   margin: 0;
   text-align: center;
   background-color: #FFFFFF;
-  font-family: Helvetica, sans-serif, sans-serif;
+  font-family: 'Slabo 13px', sans-serif;
   font-size: 14px;
   min-height: 100%;
   display: flex;
@@ -20,10 +21,10 @@ body {
 
 h1 {
   text-align: center;
-  font-size: 3.625rem;
+  font-size: 3rem;
 }
 
-h4 {
+h4, h3 {
   font-size: 1.2rem;
 }
 
@@ -59,7 +60,7 @@ td {
 .yoga-title {
   display: block;
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
   margin: auto;
 }
 
