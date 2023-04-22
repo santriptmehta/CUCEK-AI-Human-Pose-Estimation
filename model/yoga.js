@@ -17,7 +17,7 @@ let triangleAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
 let reverseWarriorAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
 let seatedTwistAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
 let sidePlankAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
-let standingCoreAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
+let standingCoreAngleTarget = [176,174,170,174,82,67,44,135,97,83,94,84,90,88];
 let lowLungeRevolvedAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
 
 let targetArray;
@@ -29,6 +29,8 @@ let flagged = [];
 let timer = 5;
 let sessionTimer = false;
 let finishedStatus = "Finished";
+let saveAccuracy;
+let saveAccuracyArr = [];
 
 function setup() {
   canvas = createCanvas(800, 600);
@@ -253,7 +255,16 @@ function calculateError(anglesArr) {
       finalScore = (score / anglesArr.length) * 100;
       finalScore = Math.round(finalScore * 10) / 10;
       $('.accuracy').text(finalScore + " %");
+      saveAccuracy = $('.accuracy').text();
+      saveAccuracy = saveAccuracy.slice(0, -2);
+      saveAccuracy = parseInt(saveAccuracy, 10);
+      saveAccuracyArr.push(saveAccuracy);
     }
+    let saveAccuracyNum = (saveAccuracyArr.reduce( (a, b)=> (a+b) )/saveAccuracyArr.length);
+     // console.log(saveAccuracyNum);
+     saveAccuracyNum = Math.round(saveAccuracyNum * 10) / 10;
+
+     $('.percent_accuracy').text(saveAccuracyNum + " %");
     
 }
 
@@ -327,6 +338,23 @@ function giveFeedback(anglesArr){
   for(var i=0; i<anglesArr.length; i+=2) {
     $('#left-'+ i.toString()).text("∠ " + anglesArr[i]);
     $('#right-'+ (i+1).toString()).text("∠ " + anglesArr[i+1]);
+  }
+
+}
+// Working on this function -- Santript
+function changeColorText(anglesArr){
+
+  for(var i=0; i<anglesArr.length; i+=2){
+    var elementArr = $('left-'+i.toString());
+    var currElement = document.getElementById(elementArr);
+    var textValue = parseInt(textElement.innerHTML); // Get the current value of the text and convert it to an integer
+  
+    if (textValue < 50) {
+      textElement.style.color = "red"; // Change the text color to red if the value is less than 50
+    } else {
+      textElement.style.color = "darkblue"; // Change the text color to dark blue if the value is 50 or greater
+    }
+
   }
 
 }

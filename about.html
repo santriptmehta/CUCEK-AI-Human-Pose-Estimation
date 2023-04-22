@@ -7,6 +7,67 @@
     <link rel="stylesheet" href="assets/style.css">
     <!<script async src="https://www.googletagmanager.com/gtag/js?id=UA-178448067-1">
     <!</script>
+    <style>
+      html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+		}
+
+		.container {
+			display: flex;
+      margin-top: 150px;
+			flex-direction: column;
+			align-items: center;
+			height: 100%;
+		}
+
+		h1 {
+			font-size: 4em;
+			margin-bottom: 50px;
+			text-align: center;
+			color: #333;
+		}
+
+		p {
+			font-size: 1.6em;
+			margin: 0;
+			text-align: center;
+			color: #666;
+		}
+
+		footer {
+			position: fixed;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: #eee;
+			padding: 1em;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+    .uni-logo img{
+      width: 10%;
+      margin-bottom: 250px;
+    }
+
+		footer img {
+			height: 2em;
+			margin-right: 0.5em;
+		}
+
+		footer p {
+			font-size: 1.2em;
+			color: #666;
+			margin: 0;
+			text-align: center;
+		}
+    </style>
     <!<script>
       <!window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -15,33 +76,23 @@
     </script>
 </head>
 <body>
-  <div class='top-container'>
-    <h1>About</h1>
-  </div>
+  <div class="container">
+		<h1>About Us</h1>
+		<p>We are pleased to present “Yoga Pose Detection and Estimation using Posnet” as our project and take this opportunity to express our profound gratitude to all those people who helped us in completion of this project.
 
-  <div class='about-description'>
-    <p>
-      Recent advancements in Deep Learning has added a huge boost to the already rapidly
-      developing field of computer vision. With deep learning, a lot of new applications of computer
-      vision techniques have been introduced and are now becoming parts of our everyday lives.
-    </p>
-    <p>
-      Pose Estimation is a subset of computer vision that refers to computer vision techniques that detect
-      human figures in images and video, so that one could determine, for example, where someone’s
-      ankle shows up in an image. Applying computer vision techniques, is a promising way to detect movement and posture
-      errors in yoga and other fitness exercises.
-    </p>
-    <p>
-      We would like to thank <a href=" https://www.ee.ryerson.ca/people/Anpalagan.html" target="_blank">Dr. Alagan Anpalagan</a>,
-      our Faculty Lab Coordinator (FLC) who guided us throughout the different
-      phases of this capstone project. Thank you professor for the continuous support & encouragement.
-    </p>
+      We thank our college for providing us with excellent facilities that helped us to complete and present this project. We would also like to thank the staff members and lab assistants for permitting us to use computers in the lab as and when required.
+      
+      We express our deepest gratitude towards our project guide Prof. Preetha Mathew and Asst. Prof Anitha Marry Chacko for his valuable and timely advice during the various phases in our project. We would also like to thank her for providing us with all proper facilities and support as the project co-coordinator. We would like to thank her for support, patience and faith in our capabilities and for giving us flexibility in terms of working and reporting schedules.
+      
+      Finally we would like to thank everyone who has helped us directly or indirectly in our project.
+      </p>
+	</div>
+  <div class="uni-logo">
+    <img src="./imgs/logomain.png" alt="Logo">
   </div>
-
-  <div class="button-container">
-    <a href="index.html" class="button">Back</a>
-  </div>
-
+	<footer>
+		<img src="./imgs/cusat_logo.png" alt="Logo">
+		<p>&copy; 2023 CUSAT University</p>
+	</footer>
 </body>
-<footer>&copy; Copyright 2021. By Ryerson University. </footer>
 </html>
