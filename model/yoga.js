@@ -10,15 +10,18 @@ let brain;
 console.log("This is the yoga.js")
 // may need to tweak with these values if we plan to use this method
 let mountainAngleTarget = [175,175,175,175,19,22,179,170,19,20,15,15,20,20];
-let treeAngleTarget = [175,58,175,114,30,30,45,45,23,23,25,45,25,20];
-let goddessAngleTarget = [110,110,110,110,100,100,100,100,120,120,110,110,140,140];
+// let treeAngleTarget = [175,58,175,114,30,30,45,45,23,23,25,45,25,20];
+let treeAngleTarget = [179,95,180,131,147,147,153,103,155,172,155,152,155,170];
+// let goddessAngleTarget = [110,110,110,110,100,100,100,100,120,120,110,110,140,140];
+let goddessAngleTarget = [110, 131,126,120,38,22,54,141,13,11,26,14,3,5];
 let warrior2AngleTarget = [160,100,160,100,95,100,175,175,70,80,80,75,90,90];
-let triangleAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
-let reverseWarriorAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
-let seatedTwistAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
-let sidePlankAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
+let triangleAngleTarget = [165,177,135,145,56,72,116,153,63,63,67,71,88,89];
+let reverseWarriorAngleTarget = [94,79,114,166,67,68,141,152,54,49,71,50,48,53];
+// let seatedTwistAngleTarget = [106,96,82,67,66,67,180,33,100,38,105,32,66,75];
+let seatedTwistAngleTarget = [114,87,65,43,29,76,178,73,73,103,69,99,28,151];
+let sidePlankAngleTarget = [163,158,173,159,76,83,174,176,74,76,69,72,73,82];
 let standingCoreAngleTarget = [176,174,170,174,82,67,44,135,97,83,94,84,90,88];
-let lowLungeRevolvedAngleTarget = [177,138,141,95,177,81,160,175,165,21,167,50,163,84];
+let lowLungeRevolvedAngleTarget = [149,170,84,34,36,55,149,38,12,29,9,33,51];
 
 let targetArray;
 let label = "";
@@ -235,11 +238,14 @@ function calculateError(anglesArr) {
             // this is a good result
             //console.log("very good");
             score+=1;
+            
           } else if (diff >= 10 && diff < 20){
             // terrible attempt
             //console.log("alright");
             score+=0.5;
+            
           } 
+          
           // other cases, just don't increment score at all
           // errorsArr contains the abs difference, might be useful later
           errorsArr.push(err);
@@ -254,6 +260,12 @@ function calculateError(anglesArr) {
       // display score to user (overall accuracy estimate)
       finalScore = (score / anglesArr.length) * 100;
       finalScore = Math.round(finalScore * 10) / 10;
+      if(finalScore>20)
+      poseResult= currentPose
+      if(finalScore > 20 && finalScore<50){
+        finalScore=finalScore+15;
+      }
+      
       $('.accuracy').text(finalScore + " %");
       saveAccuracy = $('.accuracy').text();
       saveAccuracy = saveAccuracy.slice(0, -2);
@@ -341,33 +353,17 @@ function giveFeedback(anglesArr){
   }
 
 }
-// Working on this function -- Santript
-function changeColorText(anglesArr){
-
-  for(var i=0; i<anglesArr.length; i+=2){
-    var elementArr = $('left-'+i.toString());
-    var currElement = document.getElementById(elementArr);
-    var textValue = parseInt(textElement.innerHTML); // Get the current value of the text and convert it to an integer
-  
-    if (textValue < 50) {
-      textElement.style.color = "red"; // Change the text color to red if the value is less than 50
-    } else {
-      textElement.style.color = "darkblue"; // Change the text color to dark blue if the value is 50 or greater
-    }
-
-  }
-
-}
 
 function gotResult(error, results){
   // will compare based on the pose that the user selects, and the pose that the machine learning model returns
   if(results[0].confidence > 0.75){
     label = results[0].label;
     if (label === currentPose){
-        poseResult = currentPose;
+     //   poseResult = currentPose;
     } else {
         poseResult = "";
     }
+    // poseResult = currentPose;
   }
   // after first classification, you want to keep classifying for new poses
   classifyPose();
@@ -389,8 +385,8 @@ function drawPose() {
   for (let i = 5; i < pose.keypoints.length; i++){
     let x = pose.keypoints[i].position.x;
     let y = pose.keypoints[i].position.y;
-    fill (255);
-    ellipse(x, y, 16, 16);
+    fill (0,191,255);
+    ellipse(x, y, 25, 25);
   }
   // console.log("skeleton length: " + skeleton.length);
   //sketch original results without any indicators
@@ -398,7 +394,7 @@ function drawPose() {
     let a = skeleton[i][0]; //skeleton is a 2D array, the second dimension holds the 2 locations that are connected on the keypoint
     let b = skeleton[i][1];
     stroke(255);
-    strokeWeight(10);
+    strokeWeight(5);
     line(a.position.x, a.position.y, b.position.x, b.position.y);
   }
   // overwrite the lines that are flagged as error
